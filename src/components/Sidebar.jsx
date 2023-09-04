@@ -19,14 +19,14 @@ const Sidebar = () => {
       }`}
     >
       <nav
-        className={`bg-background relative text-text w-[20rem] max-md:w-[35%] flex items-center flex-col h-[100vh] max-xs:w-full`}
+        className={`bg-background relative text-text w-[20rem] max-md:w-[40rem] flex items-center flex-col h-[100vh] max-xs:w-full`}
       >
         <div className=" flex relative w-full justify-center items-center text-4xl  p-4 ">
           <Link to="/">
             <h3 className=" ">Sidebar</h3>
           </Link>
           <Button
-            style={` bg-[#3b4245]  text-secondary  absolute flex justify-center items-center top-4 h-[60%] right-2 aspect-square right-0 text-xl md:hidden ${
+            style={` bg-primary  text-secondary  absolute flex justify-center items-center top-4 h-[60%] right-2 aspect-square right-0 text-xl md:hidden ${
               !isOpen && "hidden"
             } `}
             onClick={handleToggleSidebar}
@@ -54,7 +54,7 @@ const Sidebar = () => {
       </nav>
       {isOpen && (
         <div
-          className="z-10 bg-black opacity-20 md:hidden w-[65%] max-xs:hidden"
+          className="z-10 bg-black opacity-20 md:hidden w-full max-xs:hidden"
           onClick={handleToggleSidebar}
         ></div>
       )}
