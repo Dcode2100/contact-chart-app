@@ -1,13 +1,24 @@
-// src/redux/store.js
+import { configureStore } from "@reduxjs/toolkit";
+import { persistStore, persistReducer } from "redux-persist";
+import storage from "redux-persist/lib/storage";
+import sidebarReducer from "./sidebarSlice";
+import contactReducer from "./contactSlice";
 
-import { configureStore } from '@reduxjs/toolkit';
-import sidebarReducer from './sidebarSlice';
+const persistConfig = {
+  key: "root",
+  storage,
+  whitelist: ["sidebar", "contact"],
+};
+
+const persistedSidebarReducer = persistReducer(persistConfig, sidebarReducer);
+const persistedContactReducer = persistReducer(persistConfig, contactReducer);
 
 const store = configureStore({
   reducer: {
-    sidebar: sidebarReducer,
-    // Add other reducers if you have them
+    sidebar: persistedSidebarReducer,
+    contacts: persistedContactReducer,
   },
 });
+const persistor = persistStore(store);
 
-export default store;
+export { store, persistor };

@@ -4,6 +4,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { toggleSidebar, selectSidebar } from "../redux/sidebarSlice";
 import Button from "./Button";
 import { RxCross2 } from "react-icons/rx";
+
+
+const CustomLink = ({ className, path, children }) => {
+  return (
+    <Link to={path} className={className}>
+      {children}
+    </Link>
+  );
+};
+
 const Sidebar = () => {
   const dispatch = useDispatch();
   const isOpen = useSelector(selectSidebar);
@@ -21,34 +31,34 @@ const Sidebar = () => {
       <nav
         className={`bg-background relative text-text w-[20rem] max-md:w-[40rem] flex items-center flex-col h-[100vh] max-xs:w-full`}
       >
-        <div className=" flex relative w-full justify-center items-center text-4xl  p-4 ">
-          <Link to="/">
-            <h3 className=" ">Sidebar</h3>
-          </Link>
+        <div className=" flex relative w-full justify-center items-center text-4xl  p-3 mb-5">
+          <CustomLink className="" path="/">
+            <h3 className="">Sidebar</h3>
+          </CustomLink>
           <Button
-            style={` bg-primary  text-secondary  absolute flex justify-center items-center top-4 h-[60%] right-2 aspect-square right-0 text-xl md:hidden ${
+            className={` bg-primary  text-secondary  absolute flex justify-center items-center top-3 h-[60%] right-2 aspect-square text-xl md:hidden ${
               !isOpen && "hidden"
             } `}
             onClick={handleToggleSidebar}
             label={<RxCross2 />}
           />
         </div>
-        <ul className="flex flex-col mt-5 w-full items-center relative">
-          <li className="w-full">
-            <Link
-              to="/dashboard"
+        <ul className="flex flex-col  w-full  border-t border-black items-center relative">
+          <li className="w-full border-b border-black">
+            <CustomLink
               className="text-text h-full flex justify-center w-full py-4 hover:bg-primary hover:text-white text-xl"
+              path="/dashboard"
             >
               Charts and Map
-            </Link>
+            </CustomLink>
           </li>
-          <li className="w-full">
-            <Link
-              to="/contacts"
+          <li className="w-full border-b border-black">
+            <CustomLink
               className="text-text h-full flex justify-center w-full py-4 hover:bg-primary hover:text-white text-xl"
+              path="/contacts"
             >
               Contacts
-            </Link>
+            </CustomLink>
           </li>
         </ul>
       </nav>

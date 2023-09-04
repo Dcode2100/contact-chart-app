@@ -29,7 +29,7 @@ function AppRoutes() {
     <div className="relative h-max w-full">
       <div className="h-full relative ">
         <Button
-          style={` md:hidden absolute p-2 h-full flex text-secondary justify-center items-center aspect-square top-0 left-0 text-xl `}
+          className={` md:hidden absolute p-2 h-full flex text-secondary justify-center items-center aspect-square top-0 left-0 text-xl `}
           onClick={handleToggleSidebar}
           label={<AiOutlineMenu />}
         />
@@ -37,7 +37,7 @@ function AppRoutes() {
           {headingText}
         </h2>
       </div>
-      <div className="border p-5 h-full m-4  rounded-lg border-primary ">
+      <div className="border p-4 h-full m-4  rounded-lg border-primary ">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/dashboard" element={<Dashboard />} />
