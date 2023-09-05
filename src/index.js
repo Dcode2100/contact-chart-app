@@ -1,20 +1,25 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { Provider } from "react-redux"; // Import the Provider from react-redux
+import { Provider } from "react-redux";
 import "./index.css";
+import { QueryClient, QueryClientProvider } from "react-query";
 import App from "./App";
 import { PersistGate } from "redux-persist/integration/react";
 import reportWebVitals from "./reportWebVitals";
 import { store, persistor } from "../src/redux/store";
 
+const queryClient = new QueryClient({});
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
-        <App />
-      </PersistGate>
-    </Provider>
+    <QueryClientProvider client={queryClient}>
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          <App />
+        </PersistGate>
+      </Provider>
+    </QueryClientProvider>
   </React.StrictMode>
 );
 

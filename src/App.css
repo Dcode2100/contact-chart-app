@@ -1,6 +1,13 @@
+
 .app{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     border: 0;
 }
+
+.chart-container {
+    width: 100%; /* Set the width to 100% to occupy the parent's width */
+    max-width: 100%; /* Ensure it doesn't exceed the parent's width */
+    height: auto; /* Allow the height to adjust based on content */
+  }

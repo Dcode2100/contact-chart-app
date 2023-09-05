@@ -1,11 +1,12 @@
 
 import React from 'react';
-
+import LineChartHistoric from '../components/LineChartHistoric';
+import CovidWorldMap from "../components/CovidWorldMap"
 function Dashboard() {
   return (
-    <div>
-      <h1>Dashboard Page</h1>
-      <p>Welcome to the Dashboard page. This is a placeholder.</p>
+    <div className='p-5 w-full relative'>
+      <LineChartHistoric />
+      <CovidWorldMap/>
     </div>
   );
 }
