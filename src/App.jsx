@@ -7,14 +7,16 @@ import AppRoutes from './routes/AppRoutes';
 
 function App() {
   return (
-    <Router>
-      <div className="flex h-full w-full relative">
-        <Sidebar />
-        <div className="flex-grow ">
-          <AppRoutes />
+    <div className='app h-full w-full '>
+      <Router>
+        <div className="flex h-full w-full relative">
+          <Sidebar />
+          <div className="h-full relative w-full">
+            <AppRoutes />
+          </div>
         </div>
-      </div>
-    </Router>
+      </Router>
+    </div>
   );
 }
 

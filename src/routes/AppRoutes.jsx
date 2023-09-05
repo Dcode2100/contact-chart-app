@@ -26,23 +26,25 @@ function AppRoutes() {
   }
 
   return (
-    <div className="relative h-max w-full">
-      <div className="h-full relative ">
+    <div className="parent relative w-full h-full">
+      <div className="header-container relative h-[10vh]">
         <Button
-          className={` md:hidden absolute p-2 h-full flex text-secondary justify-center items-center aspect-square top-0 left-0 text-xl `}
+          className={` md:hidden absolute h-full flex text-secondary  justify-center items-center aspect-square top-0 left-0 text-xl `}
           onClick={handleToggleSidebar}
           label={<AiOutlineMenu />}
         />
-        <h2 className="w-full flex justify-center p-4 text-xl bg-primary text-secondary">
+        <h2 className="w-full flex justify-center items-center h-full text-xl bg-primary text-secondary">
           {headingText}
         </h2>
       </div>
-      <div className="border p-4 h-full m-4  rounded-lg border-primary ">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/contacts" element={<Contacts />} />
-        </Routes>
+      <div className="outside-container p-4 w-full relative h-[90vh] max-md:min-h-[90vh]  ">
+        <div className="inside-container border h-full relative w-full rounded-lg border-primary ">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/contacts" element={<Contacts />} />
+          </Routes>
+        </div>
       </div>
     </div>
   );

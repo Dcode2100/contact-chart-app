@@ -3,53 +3,56 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   contactlist: [
     {
-      id: 1, // Add an id property to each contact
+      id: 1,
       firstName: "John",
       lastName: "Doe",
       isActive: true,
     },
     {
-      id: 2, // Add an id property to each contact
+      id: 2,
       firstName: "dikshant",
       lastName: "solanki",
       isActive: false,
     },
   ],
-  idCounter: 3, // Initialize it based on the number of initial contacts
-  isEditing: false,
-  persist: true,
+  idCounter: 3,
+  isEditing: null, // Track the contact being edited by its ID
 };
-
 
 const contactsSlice = createSlice({
   name: "contacts",
   initialState,
   reducers: {
-    // increamenting the id and then storing for contact tracking
     addContact: (state, action) => {
       const newContact = {
         ...action.payload,
-        id: state.idCounter, 
+        id: state.idCounter,
       };
       state.contactlist.push(newContact);
-      state.idCounter++; 
+      state.idCounter++;
     },
-    
+
     editContact: (state, action) => {
       const { id, updatedContact } = action.payload;
       const index = state.contactlist.findIndex((contact) => contact.id === id);
       if (index !== -1) {
         state.contactlist[index] = updatedContact;
+        state.isEditing = null; // Reset the editing state
       }
     },
+
     deleteContact: (state, action) => {
       const id = action.payload;
       state.contactlist = state.contactlist.filter(
         (contact) => contact.id !== id
       );
+      if (state.isEditing === id) {
+        state.isEditing = null; // Reset the editing state if the deleted contact was being edited
+      }
     },
-    toggleEditing: (state) => {
-      state.isEditing = !state.isEditing;
+
+    toggleEditing: (state, action) => {
+      state.isEditing = action.payload; // Set the contact ID that is being edited
     },
   },
 });
