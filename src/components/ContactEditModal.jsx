@@ -11,7 +11,7 @@ const ContactEditModal = ({ contact, onClose }) => {
   );
 
   const [editedContact, setEditedContact] = useState(contactData);
-  const [modalVisible, setModalVisible] = useState(false); 
+  const [modalVisible, setModalVisible] = useState(false);
 
 
   useEffect(() => {
@@ -41,30 +41,27 @@ const ContactEditModal = ({ contact, onClose }) => {
   return (
     <div className={`absolute h-full gap-7 flex-col flex justify-center items-center rounded-lg bg-accent w-full max-md:h-full transition-opacity duration-500 ${modalVisible ? "opacity-100" : "opacity-0"} `}>
       <div className="text-4xl max-xs:text-3xl text-secondary">Edit Contact</div>
-      <div className="bg-secondary p-10 max-md:p-5 max-xs:relative rounded-md min-w-[20rem] max-xs:w-[80%] gap-2 flex flex-col">
-        <div className="w-full flex gap-1 font-medium relative items-center">
-          <label className="whitespace-nowrap" htmlFor="firstName">First Name:</label>
-          <input
-            type="text"
-            name="firstName"
-            id="firstName"
-            value={editedContact.firstName && editedContact.firstName}
-            onChange={handleInputChange}
-            className="border border-black p-2 rounded-md  "
-          />
-        </div>
-        <div className="w-full flex gap-1 font-medium relative items-center">
-          <label className="whitespace-nowrap" htmlFor="lastName">Last Name:</label>
-          <input
-            type="text"
-            name="lastName"
-            id="lastName"
-            value={editedContact.lastName && editedContact.lastName}
-            onChange={handleInputChange}
-            className="border border-black p-2 rounded-md "
-          />
-        </div>
-        <div className="w-full flex gap-9 font-medium items-center">
+      <div className="bg-secondary p-5 max-md:p-5 max-sm:relative rounded-md w-[20rem] max-xs:max-w-[80%] gap-2 flex flex-col">
+        <label className="whitespace-nowrap" htmlFor="firstName">First Name:</label>
+        <input
+          type="text"
+          name="firstName"
+          id="firstName"
+          value={editedContact.firstName && editedContact.firstName}
+          onChange={handleInputChange}
+          className="border border-black  rounded-md p-1"
+        />
+        <label className="whitespace-nowrap" htmlFor="lastName">Last Name:</label>
+        <input
+          type="text"
+          name="lastName"
+          id="lastName"
+          value={editedContact.lastName && editedContact.lastName}
+          onChange={handleInputChange}
+          className="border border-black  rounded-md p-1"
+        />
+
+        <div className="w-full flex gap-9 font-medium items-center ">
           <label>Status:</label>
           <div className="flex  flex-col">
             <label>

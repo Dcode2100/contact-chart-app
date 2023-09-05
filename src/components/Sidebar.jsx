@@ -24,9 +24,8 @@ const Sidebar = () => {
 
   return (
     <div
-      className={`flex max-md:absolute max-md:top-0 max-md:left-0 max-md:z-10 max-md:w-full ${
-        isOpen ? "" : "hidden"
-      }`}
+      className={`flex max-md:absolute max-md:top-0 max-md:left-0 max-md:z-10 max-md:w-full ${isOpen ? "" : "hidden"
+        }`}
     >
       <nav
         className={`bg-background relative text-text w-[20rem] max-md:w-[40rem] flex items-center flex-col h-[100vh] max-xs:w-full`}
@@ -36,9 +35,8 @@ const Sidebar = () => {
             <h3 className="">Sidebar</h3>
           </CustomLink>
           <Button
-            className={` bg-primary  text-secondary  absolute flex justify-center items-center top-3 h-[60%] right-2 aspect-square text-xl md:hidden ${
-              !isOpen && "hidden"
-            } `}
+            className={` bg-primary  text-secondary  absolute flex justify-center items-center top-3 h-[60%] right-2 aspect-square text-xl md:hidden ${!isOpen && "hidden"
+              } `}
             onClick={handleToggleSidebar}
             label={<RxCross2 />}
           />

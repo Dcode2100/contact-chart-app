@@ -37,7 +37,7 @@ function AppRoutes() {
           {headingText}
         </h2>
       </div>
-      <div className="outside-container p-4 w-full relative h-[90vh] max-md:min-h-[90vh]  ">
+      <div className="outside-container p-4 w-full flex flex-grow relative sm:h-[90vh] max-lg:min-h-[90vh]  ">
         <div className="inside-container border h-full relative w-full rounded-lg border-primary ">
           <Routes>
             <Route path="/" element={<Home />} />

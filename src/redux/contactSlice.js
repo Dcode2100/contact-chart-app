@@ -4,8 +4,8 @@ const initialState = {
   contactlist: [
     {
       id: 1,
-      firstName: "John",
-      lastName: "Doe",
+      firstName: "aslir",
+      lastName: "asdf",
       isActive: true,
     },
     {
@@ -16,7 +16,6 @@ const initialState = {
     },
   ],
   idCounter: 3,
-  isEditing: null, // Track the contact being edited by its ID
 };
 
 const contactsSlice = createSlice({
@@ -37,7 +36,7 @@ const contactsSlice = createSlice({
       const index = state.contactlist.findIndex((contact) => contact.id === id);
       if (index !== -1) {
         state.contactlist[index] = updatedContact;
-        state.isEditing = null; // Reset the editing state
+        state.isEditing = null;
       }
     },
 
@@ -47,17 +46,12 @@ const contactsSlice = createSlice({
         (contact) => contact.id !== id
       );
       if (state.isEditing === id) {
-        state.isEditing = null; // Reset the editing state if the deleted contact was being edited
+        state.isEditing = null;
       }
-    },
-
-    toggleEditing: (state, action) => {
-      state.isEditing = action.payload; // Set the contact ID that is being edited
     },
   },
 });
 
-export const { addContact, editContact, deleteContact, toggleEditing } =
-  contactsSlice.actions;
+export const { addContact, editContact, deleteContact } = contactsSlice.actions;
 
 export default contactsSlice.reducer;
