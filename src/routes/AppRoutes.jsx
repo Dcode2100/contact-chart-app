@@ -1,11 +1,12 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 import Contacts from "../pages/Contacts";
-import Dashboard from "../pages/Dashboard";
+import Dashboard from "../pages/Charts";
 import Button from "../components/Button";
 import { useDispatch } from "react-redux";
 import { toggleSidebar } from "../redux/sidebarSlice";
 import { AiOutlineMenu } from "react-icons/ai";
-import Home from "../pages/Home";
+
+import Maps from "../pages/Maps";
 
 function AppRoutes() {
   const dispatch = useDispatch();
@@ -19,10 +20,10 @@ function AppRoutes() {
   let headingText = "Heading";
   if (path === "/contacts") {
     headingText = "Contact Page";
-  } else if (path === "/dashboard") {
-    headingText = "Charts and Maps";
-  } else if (path === "/") {
-    headingText = "home";
+  } else if (path === "/charts") {
+    headingText = "Charts Page";
+  } else if (path === "/maps") {
+    headingText = "Maps Page";
   }
 
   return (
@@ -40,9 +41,11 @@ function AppRoutes() {
       <div className="outside-container p-4 w-full flex flex-grow relative sm:h-[90vh] max-lg:min-h-[90vh]  ">
         <div className="inside-container border h-full relative w-full rounded-lg border-primary ">
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/dashboard" element={<Dashboard />} />
+
+            <Route path="/" element={<Contacts />} />
             <Route path="/contacts" element={<Contacts />} />
+            <Route path="/charts" element={<Dashboard />} />
+            <Route path="/maps" element={<Maps />} />
           </Routes>
         </div>
       </div>

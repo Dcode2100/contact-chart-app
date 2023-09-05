@@ -2,7 +2,7 @@ import React from 'react';
 import { LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer } from 'recharts';
 import { useHistoricalData } from '../services/covid';
 import "../styles/loader.css"
-import "../app.css"
+import "../App.css"
 
 function LineChartHistoric() {
     const { data, status } = useHistoricalData();

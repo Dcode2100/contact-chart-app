@@ -53,9 +53,17 @@ const Sidebar = () => {
           <li className="w-full border-b border-black">
             <CustomLink
               className="text-text h-full flex justify-center w-full py-4 hover:bg-primary hover:text-white text-xl"
-              path="/dashboard"
+              path="/charts"
             >
-              Charts and Map
+              Charts
+            </CustomLink>
+          </li>
+          <li className="w-full border-b border-black">
+            <CustomLink
+              className="text-text h-full flex justify-center w-full py-4 hover:bg-primary hover:text-white text-xl"
+              path="/maps"
+            >
+              Map
             </CustomLink>
           </li>
         </ul>

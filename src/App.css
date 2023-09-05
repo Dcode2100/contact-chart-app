@@ -11,3 +11,11 @@
     max-width: 100%; /* Ensure it doesn't exceed the parent's width */
     height: auto; /* Allow the height to adjust based on content */
   }
+
+  .popup-content {
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
