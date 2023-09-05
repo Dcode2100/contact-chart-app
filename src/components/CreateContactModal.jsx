@@ -12,7 +12,7 @@ const CreateContactForm = ({ toggleAddContact }) => {
     });
 
     const [modalVisible, setModalVisible] = useState(false);
-    const [modalAnimation, setModalAnimation] = useState("");
+   
 
     useEffect(() => {
 
@@ -42,7 +42,7 @@ const CreateContactForm = ({ toggleAddContact }) => {
 
     return (
         <div className={`absolute h-full gap-7 flex-col flex justify-center items-center   rounded-lg bg-accent w-full max-md:h-full transition-opacity duration-500 ${modalVisible ? "opacity-100" : "opacity-0"
-            } ${modalAnimation}`}>
+            }`}>
             <div className="text-4xl max-xs:text-3xl text-secondary ">Create Contact Screen</div>
             <div className="bg-secondary p-10 max-xs:relative  rounded-md w-[20rem] max-xs:w-[80%] gap-2 flex flex-col">
                 <div className="flex flex-col gap-3">

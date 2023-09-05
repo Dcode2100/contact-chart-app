@@ -11,8 +11,8 @@ const ContactEditModal = ({ contact, onClose }) => {
   );
 
   const [editedContact, setEditedContact] = useState(contactData);
-  const [modalVisible, setModalVisible] = useState(false); // State to manage modal visibility
-  const [modalAnimation, setModalAnimation] = useState(""); // State to manage modal animation
+  const [modalVisible, setModalVisible] = useState(false); 
+
 
   useEffect(() => {
 
@@ -39,7 +39,7 @@ const ContactEditModal = ({ contact, onClose }) => {
   };
 
   return (
-    <div className={`absolute h-full gap-7 flex-col flex justify-center items-center rounded-lg bg-accent w-full max-md:h-full transition-opacity duration-500 ${modalVisible ? "opacity-100" : "opacity-0"} ${modalAnimation}`}>
+    <div className={`absolute h-full gap-7 flex-col flex justify-center items-center rounded-lg bg-accent w-full max-md:h-full transition-opacity duration-500 ${modalVisible ? "opacity-100" : "opacity-0"} `}>
       <div className="text-4xl max-xs:text-3xl text-secondary">Edit Contact</div>
       <div className="bg-secondary p-10 max-md:p-5 max-xs:relative rounded-md min-w-[20rem] max-xs:w-[80%] gap-2 flex flex-col">
         <div className="w-full flex gap-1 font-medium relative items-center">

@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Button from "../components/Button";
 import { useDispatch, useSelector } from "react-redux";
-import { addContact, deleteContact } from "../redux/contactSlice";
+import { deleteContact } from "../redux/contactSlice";
 import CreateContactModal from "../components/CreateContactModal";
 import ContactEditModal from '../components/ContactEditModal';
-import { toggleEditing } from '../redux/contactSlice';
 
 const ContactCard = ({ item, handleEditClick }) => {
   const dispatch = useDispatch();
@@ -34,7 +33,6 @@ const Contacts = () => {
   const [isAddingContact, setIsAddingContact] = useState(false);
   const [editingContact, setEditingContact] = useState(null);
 
-  const dispatch = useDispatch();
   const contactList = useSelector((state) => state.contacts.contactlist);
 
   const toggleAddContact = () => {
